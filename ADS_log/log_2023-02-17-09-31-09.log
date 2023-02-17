@@ -1,0 +1,52 @@
+[2023-02-17 09:31:11,002] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:31:11,002] root - INFO - Exporting collection data as pandas dataframe
+[2023-02-17 09:31:11,002] root - INFO - Reading data from database: ADS and collection: ADS CLICK SYSTEM
+[2023-02-17 09:31:11,120] root - INFO - Found columns: Index(['_id', 'Daily Time Spent on Site', 'Age', 'Area Income',
+       'Daily Internet Usage', 'City', 'Gender', 'Country', 'Clicked on Ad'],
+      dtype='object')
+[2023-02-17 09:31:11,121] root - INFO - Dropping column: _id 
+[2023-02-17 09:31:11,123] root - INFO - Row and columns in df: (10000, 8)
+[2023-02-17 09:31:11,123] root - INFO - Save data in feature store
+[2023-02-17 09:31:11,124] root - INFO - Creating feature store if not exist
+[2023-02-17 09:31:11,125] root - INFO - save df to feature store folder
+[2023-02-17 09:31:11,177] root - INFO - split dataset into train and test set
+[2023-02-17 09:31:11,180] root - INFO - create dataset directory folder if not available
+[2023-02-17 09:31:11,180] root - INFO - save df to feature store folder
+[2023-02-17 09:31:11,237] root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/02172023__093111/data_ingestion/feature_store/advertising.csv', train_file_path='/config/workspace/artifact/02172023__093111/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/02172023__093111/data_ingestion/dataset/test.csv')
+[2023-02-17 09:31:11,241] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:31:11,241] root - INFO - Reading base dataframe
+[2023-02-17 09:31:11,257] root - INFO - Replace na value in base df
+[2023-02-17 09:31:11,257] root - INFO - Drop null values colums from base df
+[2023-02-17 09:31:11,263] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 09:31:11,263] root - INFO - Column to drop :[]
+[2023-02-17 09:31:11,264] root - INFO - Reading train dataframe
+[2023-02-17 09:31:11,273] root - INFO - Reading test dataframe
+[2023-02-17 09:31:11,277] root - INFO - Drop null values colums from train df
+[2023-02-17 09:31:11,282] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 09:31:11,282] root - INFO - Column to drop :[]
+[2023-02-17 09:31:11,283] root - INFO - Drop null values colums from test df
+[2023-02-17 09:31:11,285] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 09:31:11,285] root - INFO - Column to drop :[]
+[2023-02-17 09:31:11,290] root - INFO - Is all required columns present in train df
+[2023-02-17 09:31:11,291] root - INFO - Is all required columns present in test df
+[2023-02-17 09:31:11,291] root - INFO - As all column are available in train df hence detecting data drift
+[2023-02-17 09:31:11,291] root - INFO - Hypothesis Daily Time Spent on Site: float64, float64 
+[2023-02-17 09:31:11,300] root - INFO - Hypothesis Age: float64, float64 
+[2023-02-17 09:31:11,307] root - INFO - Hypothesis Area Income: float64, float64 
+[2023-02-17 09:31:11,314] root - INFO - Hypothesis Daily Internet Usage: float64, float64 
+[2023-02-17 09:31:11,322] root - INFO - Hypothesis City: object, object 
+[2023-02-17 09:31:11,363] root - INFO - Hypothesis Gender: object, object 
+[2023-02-17 09:31:11,386] root - INFO - Hypothesis Country: object, object 
+[2023-02-17 09:31:11,422] root - INFO - Hypothesis Clicked on Ad: int64, int64 
+[2023-02-17 09:31:11,424] root - INFO - As all column are available in test df hence detecting data drift
+[2023-02-17 09:31:11,424] root - INFO - Hypothesis Daily Time Spent on Site: float64, float64 
+[2023-02-17 09:31:11,432] root - INFO - Hypothesis Age: float64, float64 
+[2023-02-17 09:31:11,439] root - INFO - Hypothesis Area Income: float64, float64 
+[2023-02-17 09:31:11,445] root - INFO - Hypothesis Daily Internet Usage: float64, float64 
+[2023-02-17 09:31:11,452] root - INFO - Hypothesis City: object, object 
+[2023-02-17 09:31:11,482] root - INFO - Hypothesis Gender: object, object 
+[2023-02-17 09:31:11,497] root - INFO - Hypothesis Country: object, object 
+[2023-02-17 09:31:11,521] root - INFO - Hypothesis Clicked on Ad: int64, int64 
+[2023-02-17 09:31:11,522] root - INFO - Write reprt in yaml file
+[2023-02-17 09:31:11,527] root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='/config/workspace/artifact/02172023__093111/data_validation/report.yaml')
+[2023-02-17 09:31:11,527] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

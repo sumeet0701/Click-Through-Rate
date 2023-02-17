@@ -1,0 +1,17 @@
+[2023-02-17 09:28:18,102] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:28:18,102] root - INFO - Exporting collection data as pandas dataframe
+[2023-02-17 09:28:18,102] root - INFO - Reading data from database: ADS and collection: ADS CLICK SYSTEM
+[2023-02-17 09:28:18,243] root - INFO - Found columns: Index(['_id', 'Daily Time Spent on Site', 'Age', 'Area Income',
+       'Daily Internet Usage', 'City', 'Gender', 'Country', 'Clicked on Ad'],
+      dtype='object')
+[2023-02-17 09:28:18,243] root - INFO - Dropping column: _id 
+[2023-02-17 09:28:18,245] root - INFO - Row and columns in df: (10000, 8)
+[2023-02-17 09:28:18,245] root - INFO - Save data in feature store
+[2023-02-17 09:28:18,247] root - INFO - Creating feature store if not exist
+[2023-02-17 09:28:18,248] root - INFO - save df to feature store folder
+[2023-02-17 09:28:18,312] root - INFO - split dataset into train and test set
+[2023-02-17 09:28:18,314] root - INFO - create dataset directory folder if not available
+[2023-02-17 09:28:18,315] root - INFO - save df to feature store folder
+[2023-02-17 09:28:18,369] root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/02172023__092818/data_ingestion/feature_store/advertising.csv', train_file_path='/config/workspace/artifact/02172023__092818/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/02172023__092818/data_ingestion/dataset/test.csv')
+[2023-02-17 09:28:18,371] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:28:18,371] root - INFO - Reading base dataframe

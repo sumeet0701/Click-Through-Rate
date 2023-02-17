@@ -1,0 +1,13 @@
+[2023-02-17 09:26:39,167] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:26:39,167] root - INFO - Exporting collection data as pandas dataframe
+[2023-02-17 09:26:39,167] root - INFO - Reading data from database: ADS and collection: ADS CLICK SYSTEM
+[2023-02-17 09:26:39,305] root - INFO - Found columns: Index(['_id', 'Daily Time Spent on Site', 'Age', 'Area Income',
+       'Daily Internet Usage', 'City', 'Gender', 'Country', 'Clicked on Ad'],
+      dtype='object')
+[2023-02-17 09:26:39,305] root - INFO - Dropping column: _id 
+[2023-02-17 09:26:39,307] root - INFO - Row and columns in df: (10000, 8)
+[2023-02-17 09:26:39,307] root - INFO - Save data in feature store
+[2023-02-17 09:26:39,309] root - INFO - Creating feature store if not exist
+[2023-02-17 09:26:39,309] root - INFO - save df to feature store folder
+[2023-02-17 09:26:39,362] root - INFO - split dataset into train and test set
+[2023-02-17 09:26:39,365] root - INFO - save df to feature store folder

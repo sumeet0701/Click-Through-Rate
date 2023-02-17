@@ -1,0 +1,53 @@
+data_drift_within_test_dataset:
+  Age:
+    pvalues: 0.7167309494534837
+    same_distribution: true
+  Area Income:
+    pvalues: 0.8867268907267177
+    same_distribution: true
+  City:
+    pvalues: 0.4029277053365219
+    same_distribution: true
+  Clicked on Ad:
+    pvalues: 1.0
+    same_distribution: true
+  Country:
+    pvalues: 0.9999931752894311
+    same_distribution: true
+  Daily Internet Usage:
+    pvalues: 0.7031299896660438
+    same_distribution: true
+  Daily Time Spent on Site:
+    pvalues: 0.5197857482060365
+    same_distribution: true
+  Gender:
+    pvalues: 1.0
+    same_distribution: true
+data_drift_within_train_dataset:
+  Age:
+    pvalues: 0.9999975973756159
+    same_distribution: true
+  Area Income:
+    pvalues: 0.9999999955792876
+    same_distribution: true
+  City:
+    pvalues: 0.999323025382174
+    same_distribution: true
+  Clicked on Ad:
+    pvalues: 1.0
+    same_distribution: true
+  Country:
+    pvalues: 1.0
+    same_distribution: true
+  Daily Internet Usage:
+    pvalues: 0.9999966415258449
+    same_distribution: true
+  Daily Time Spent on Site:
+    pvalues: 0.9998812819104687
+    same_distribution: true
+  Gender:
+    pvalues: 1.0
+    same_distribution: true
+missing_values_within_base_dataset: []
+missing_values_within_test_dataset: []
+missing_values_within_train_dataset: []

@@ -1,0 +1,67 @@
+[2023-02-17 10:17:49,099] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 10:17:49,100] root - INFO - Exporting collection data as pandas dataframe
+[2023-02-17 10:17:49,100] root - INFO - Reading data from database: ADS and collection: ADS CLICK SYSTEM
+[2023-02-17 10:17:49,184] root - INFO - Found columns: Index(['_id', 'Daily Time Spent on Site', 'Age', 'Area Income',
+       'Daily Internet Usage', 'City', 'Gender', 'Country', 'Clicked on Ad'],
+      dtype='object')
+[2023-02-17 10:17:49,185] root - INFO - Dropping column: _id 
+[2023-02-17 10:17:49,187] root - INFO - Row and columns in df: (10000, 8)
+[2023-02-17 10:17:49,187] root - INFO - Save data in feature store
+[2023-02-17 10:17:49,189] root - INFO - Creating feature store if not exist
+[2023-02-17 10:17:49,190] root - INFO - save df to feature store folder
+[2023-02-17 10:17:49,249] root - INFO - split dataset into train and test set
+[2023-02-17 10:17:49,252] root - INFO - create dataset directory folder if not available
+[2023-02-17 10:17:49,252] root - INFO - save df to feature store folder
+[2023-02-17 10:17:49,307] root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/02172023__101749/data_ingestion/feature_store/advertising.csv', train_file_path='/config/workspace/artifact/02172023__101749/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/02172023__101749/data_ingestion/dataset/test.csv')
+[2023-02-17 10:17:49,309] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 10:17:49,310] root - INFO - Reading base dataframe
+[2023-02-17 10:17:49,322] root - INFO - Replace na value in base df
+[2023-02-17 10:17:49,322] root - INFO - Drop null values colums from base df
+[2023-02-17 10:17:49,326] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 10:17:49,327] root - INFO - Column to drop :[]
+[2023-02-17 10:17:49,328] root - INFO - Reading train dataframe
+[2023-02-17 10:17:49,338] root - INFO - Reading test dataframe
+[2023-02-17 10:17:49,342] root - INFO - Drop null values colums from train df
+[2023-02-17 10:17:49,347] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 10:17:49,347] root - INFO - Column to drop :[]
+[2023-02-17 10:17:49,348] root - INFO - Drop null values colums from test df
+[2023-02-17 10:17:49,350] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 10:17:49,350] root - INFO - Column to drop :[]
+[2023-02-17 10:17:49,356] root - INFO - Is all required columns present in train df
+[2023-02-17 10:17:49,356] root - INFO - Is all required columns present in test df
+[2023-02-17 10:17:49,356] root - INFO - As all column are available in train df hence detecting data drift
+[2023-02-17 10:17:49,356] root - INFO - Hypothesis Daily Time Spent on Site: float64, float64 
+[2023-02-17 10:17:49,365] root - INFO - Hypothesis Age: float64, float64 
+[2023-02-17 10:17:49,373] root - INFO - Hypothesis Area Income: float64, float64 
+[2023-02-17 10:17:49,379] root - INFO - Hypothesis Daily Internet Usage: float64, float64 
+[2023-02-17 10:17:49,387] root - INFO - Hypothesis Gender: object, object 
+[2023-02-17 10:17:49,408] root - INFO - Hypothesis Clicked on Ad: int64, int64 
+[2023-02-17 10:17:49,410] root - INFO - As all column are available in test df hence detecting data drift
+[2023-02-17 10:17:49,410] root - INFO - Hypothesis Daily Time Spent on Site: float64, float64 
+[2023-02-17 10:17:49,418] root - INFO - Hypothesis Age: float64, float64 
+[2023-02-17 10:17:49,426] root - INFO - Hypothesis Area Income: float64, float64 
+[2023-02-17 10:17:49,433] root - INFO - Hypothesis Daily Internet Usage: float64, float64 
+[2023-02-17 10:17:49,442] root - INFO - Hypothesis Gender: object, object 
+[2023-02-17 10:17:49,456] root - INFO - Hypothesis Clicked on Ad: int64, int64 
+[2023-02-17 10:17:49,457] root - INFO - Write reprt in yaml file
+[2023-02-17 10:17:49,462] root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='/config/workspace/artifact/02172023__101749/data_validation/report.yaml')
+[2023-02-17 10:17:49,462] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 10:17:49,506] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Model Trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 10:17:49,507] root - INFO - Loading train and test array.
+[2023-02-17 10:17:49,512] root - INFO - Splitting input and target feature from both train and test arr.
+[2023-02-17 10:17:49,512] root - INFO - Train the model
+[2023-02-17 10:17:51,679] root - INFO - Calculating f1 train score
+[2023-02-17 10:17:51,697] root - INFO - Calculating f1 test score
+[2023-02-17 10:17:51,707] root - INFO - train score:0.9649368863955119 and tests score 0.7579173376274826
+[2023-02-17 10:17:51,707] root - INFO - Checking if our model is underfitting or not
+[2023-02-17 10:17:51,707] root - INFO - Checking if our model is overfiiting or not
+[2023-02-17 10:17:51,707] root - INFO - Saving mode object
+[2023-02-17 10:17:51,712] root - INFO - Prepare the artifact
+[2023-02-17 10:17:51,712] root - INFO - Model trainer artifact: ModelTrainerArtifact(model_path='/config/workspace/artifact/02172023__101749/model_trainer/model/model.pkl', f1_train_score=0.9649368863955119, f1_test_score=0.7579173376274826)
+[2023-02-17 10:17:51,713] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Model Evaluation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 10:17:51,713] root - INFO - if saved model folder has model the we will compare which model is best trained or the model from saved model folder
+[2023-02-17 10:17:51,713] root - INFO - Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=None)
+[2023-02-17 10:17:51,713] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 10:17:51,713] root - INFO - Loading transformer model and target encoder
+[2023-02-17 10:17:51,719] root - INFO - Saving model into model pusher directory
+[2023-02-17 10:17:51,727] root - INFO - Saving model in saved model dir

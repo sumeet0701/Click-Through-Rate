@@ -1,0 +1,61 @@
+[2023-02-17 09:46:14,858] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:46:14,859] root - INFO - Exporting collection data as pandas dataframe
+[2023-02-17 09:46:14,859] root - INFO - Reading data from database: ADS and collection: ADS CLICK SYSTEM
+[2023-02-17 09:46:14,932] root - INFO - Found columns: Index(['_id', 'Daily Time Spent on Site', 'Age', 'Area Income',
+       'Daily Internet Usage', 'City', 'Gender', 'Country', 'Clicked on Ad'],
+      dtype='object')
+[2023-02-17 09:46:14,932] root - INFO - Dropping column: _id 
+[2023-02-17 09:46:14,934] root - INFO - Row and columns in df: (10000, 8)
+[2023-02-17 09:46:14,934] root - INFO - Save data in feature store
+[2023-02-17 09:46:14,936] root - INFO - Creating feature store if not exist
+[2023-02-17 09:46:14,937] root - INFO - save df to feature store folder
+[2023-02-17 09:46:14,989] root - INFO - split dataset into train and test set
+[2023-02-17 09:46:14,992] root - INFO - create dataset directory folder if not available
+[2023-02-17 09:46:14,992] root - INFO - save df to feature store folder
+[2023-02-17 09:46:15,045] root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/02172023__094614/data_ingestion/feature_store/advertising.csv', train_file_path='/config/workspace/artifact/02172023__094614/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/02172023__094614/data_ingestion/dataset/test.csv')
+[2023-02-17 09:46:15,047] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:46:15,047] root - INFO - Reading base dataframe
+[2023-02-17 09:46:15,057] root - INFO - Replace na value in base df
+[2023-02-17 09:46:15,057] root - INFO - Drop null values colums from base df
+[2023-02-17 09:46:15,060] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 09:46:15,060] root - INFO - Column to drop :[]
+[2023-02-17 09:46:15,061] root - INFO - Reading train dataframe
+[2023-02-17 09:46:15,070] root - INFO - Reading test dataframe
+[2023-02-17 09:46:15,074] root - INFO - Drop null values colums from train df
+[2023-02-17 09:46:15,079] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 09:46:15,079] root - INFO - Column to drop :[]
+[2023-02-17 09:46:15,080] root - INFO - Drop null values colums from test df
+[2023-02-17 09:46:15,082] root - INFO - Selecting column name which contain null values aboves to0.2
+[2023-02-17 09:46:15,082] root - INFO - Column to drop :[]
+[2023-02-17 09:46:15,088] root - INFO - Is all required columns present in train df
+[2023-02-17 09:46:15,088] root - INFO - Is all required columns present in test df
+[2023-02-17 09:46:15,088] root - INFO - As all column are available in train df hence detecting data drift
+[2023-02-17 09:46:15,088] root - INFO - Hypothesis Daily Time Spent on Site: float64, float64 
+[2023-02-17 09:46:15,097] root - INFO - Hypothesis Age: float64, float64 
+[2023-02-17 09:46:15,104] root - INFO - Hypothesis Area Income: float64, float64 
+[2023-02-17 09:46:15,111] root - INFO - Hypothesis Daily Internet Usage: float64, float64 
+[2023-02-17 09:46:15,119] root - INFO - Hypothesis Gender: object, object 
+[2023-02-17 09:46:15,141] root - INFO - Hypothesis Clicked on Ad: int64, int64 
+[2023-02-17 09:46:15,142] root - INFO - As all column are available in test df hence detecting data drift
+[2023-02-17 09:46:15,142] root - INFO - Hypothesis Daily Time Spent on Site: float64, float64 
+[2023-02-17 09:46:15,151] root - INFO - Hypothesis Age: float64, float64 
+[2023-02-17 09:46:15,157] root - INFO - Hypothesis Area Income: float64, float64 
+[2023-02-17 09:46:15,164] root - INFO - Hypothesis Daily Internet Usage: float64, float64 
+[2023-02-17 09:46:15,170] root - INFO - Hypothesis Gender: object, object 
+[2023-02-17 09:46:15,187] root - INFO - Hypothesis Clicked on Ad: int64, int64 
+[2023-02-17 09:46:15,189] root - INFO - Write reprt in yaml file
+[2023-02-17 09:46:15,193] root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='/config/workspace/artifact/02172023__094614/data_validation/report.yaml')
+[2023-02-17 09:46:15,194] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:46:15,239] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Model Trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-02-17 09:46:15,240] root - INFO - Loading train and test array.
+[2023-02-17 09:46:15,245] root - INFO - Splitting input and target feature from both train and test arr.
+[2023-02-17 09:46:15,245] root - INFO - Train the model
+[2023-02-17 09:46:17,389] root - INFO - Calculating f1 train score
+[2023-02-17 09:46:17,402] root - INFO - Calculating f1 test score
+[2023-02-17 09:46:17,409] root - INFO - train score:0.9649368863955119 and tests score 0.7579173376274826
+[2023-02-17 09:46:17,409] root - INFO - Checking if our model is underfitting or not
+[2023-02-17 09:46:17,409] root - INFO - Checking if our model is overfiiting or not
+[2023-02-17 09:46:17,409] root - INFO - Saving mode object
+[2023-02-17 09:46:17,414] root - INFO - Prepare the artifact
+[2023-02-17 09:46:17,414] root - INFO - Model trainer artifact: ModelTrainerArtifact(model_path='/config/workspace/artifact/02172023__094614/model_trainer/model/model.pkl', f1_train_score=0.9649368863955119, f1_test_score=0.7579173376274826)
+[2023-02-17 09:46:17,415] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Model Evaluation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
